@@ -50,9 +50,9 @@ function applyOperation (n : number, action : Function) : number {
 //}
 
 // アロー関数①（波括弧とreturnがある）
-//onst increment = (n : number) : number => {
-//    return n + 1;
-//}
+// const increment = (n : number) : number => {
+//     return n + 1;
+// }
 
 // アロー関数②（波括弧とreturnが無い）
 const increment = (n : number) : number => n + 1;
