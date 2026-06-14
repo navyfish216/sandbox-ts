@@ -20,6 +20,9 @@ console.log(`${kokugo.length}人の国語の合計点数は${sum}点で、平均
 console.log();
 console.log("-- kokugo.map --");
 kokugo.map((k) => console.log(k));
+const kokugo2 = kokugo.map((k) => k + 1);
+console.log();
+kokugo2.map((k) => console.log(k));
 
 console.log();
 console.log("-- kokugo.find --");
