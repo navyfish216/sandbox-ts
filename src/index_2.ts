@@ -1,3 +1,5 @@
+// 2章:変数とデータ型
+
 let age:number = 0;
 age = 35;
 const pai:number = 3.14;

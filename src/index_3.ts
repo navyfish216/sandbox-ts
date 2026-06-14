@@ -1,3 +1,5 @@
+// 3章:配列
+
 // 数値型の配列
 const kokugo: number[] = [75,90,80,100,65,30,78,98,35,54];
 console.log(kokugo);
