@@ -1,7 +1,7 @@
 // 3章:配列
 
 // 数値型の配列
-const kokugo: number[] = [75,90,80,100,65,30,78,98,35,54];
+let kokugo: number[] = [75,90,80,100,65,30,78,98,35,54];
 console.log(kokugo);
 
 // 文字列型の配列
@@ -60,3 +60,58 @@ strArray2.reverse();
 console.log(strArray2);
 strArray2.reverse();
 console.log(strArray2);
+
+// -----------------------------------------------
+// 6章:繰り返しの方に書いていた配列関連の処理を引っ越し
+// -----------------------------------------------
+
+kokugo = [80, 65, 90, 75, 85];
+
+console.log();
+console.log("-- kokugo.map 1 --");
+kokugo.map((k) => console.log(k));
+const kokugo2 = kokugo.map((k) => k + 1);
+console.log();
+kokugo2.map((k) => console.log(k));
+
+console.log();
+console.log("-- kokugo.find --");
+let findResult = kokugo.find((k) => (k >= 85 ? true : false));
+console.log(`findResult : ${findResult}`);
+findResult = kokugo.find((k) => (k > 90 ? true : false)); // 条件に合致しないとundefinedになる
+console.log(`findResult : ${findResult}`);
+
+console.log();
+console.log("-- kokugo.filter --");
+let filterResult: number[] = kokugo.filter((k) => (k >= 85 ? true : false));
+console.log(`filterResult.length : ${filterResult.length}`);
+filterResult.map((f) => console.log(f));
+console.log();
+filterResult = kokugo.filter((k) => (k > 90 ? true : false)); // 条件に合致しないと0件になる
+console.log(`filterResult.length : ${filterResult.length}`);
+filterResult.map((f) => console.log(f));
+
+console.log();
+console.log("-- kokugo.map 2 --");
+kokugo = [33, ...kokugo, 99];
+kokugo.map((k) => console.log(k));
+
+console.log();
+console.log("-- kokugo.forEach --");
+kokugo.forEach(k => console.log(k));
+
+console.log();
+console.log("-- kokugo.indexOf --");
+let i = kokugo.indexOf(65);
+console.log(i);
+i = kokugo.indexOf(98);
+console.log(i);
+
+console.log();
+console.log("-- kokugo.lastIndexOf --");
+kokugo.push(65,80);
+i = kokugo.lastIndexOf(65);
+console.log(i);
+i = kokugo.lastIndexOf(98);
+console.log(i);
+
