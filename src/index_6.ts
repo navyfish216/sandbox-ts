@@ -45,3 +45,23 @@ console.log();
 console.log("-- kokugo.map --");
 kokugo = [33, ...kokugo, 99];
 kokugo.map((k) => console.log(k));
+
+console.log();
+console.log("-- kokugo.forEach --");
+kokugo.forEach(k => console.log(k));
+
+console.log();
+console.log("-- kokugo.indexOf --");
+let i = kokugo.indexOf(65);
+console.log(i);
+i = kokugo.indexOf(98);
+console.log(i);
+
+console.log();
+console.log("-- kokugo.lastIndexOf --");
+kokugo.push(65,80);
+i = kokugo.lastIndexOf(65);
+console.log(i);
+i = kokugo.lastIndexOf(98);
+console.log(i);
+
