@@ -38,7 +38,14 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+
+    // ECMAScript のインポートとエクスポートは、CommonJS ファイルの 'verbatimModuleSyntax' の下に書き込むことができません。
+    // 最も近い 'package.json' の 'type' フィールドを調整してこのファイルを ECMAScript モジュールにするか、
+    // TypeScript で 'verbatimModuleSyntax'、'module'、'moduleResolution' の設定を調整します
+    // 方法2: verbatimModuleSyntax の設定を無効化
+    //"verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
+
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
@@ -47,6 +54,23 @@
     // 手動で追加
     //"moduleResolution": "node", //これだと非推奨（将来的に削除予定）になった
     "moduleResolution": "nodenext",
+
+    // このモジュールは、'allowSyntheticDefaultImports' フラグをオンにして既定のエクスポートを参照することにより、ECMAScript のインポートまたはエクスポートのみを使用して参照できます
+    // フラグを有効にする（推奨）
+    "allowSyntheticDefaultImports": true,
+    // あわせて esModuleInterop を true に設定することをお勧めします。
+    // このフラグを有効にすると、allowSyntheticDefaultImports も自動的に有効になり、CommonJS との相互運用性が劇的に向上します。
+    "esModuleInterop": true,
+    
+    // オプション 'allowImportingTsExtensions' は、'noEmit'、'emitDeclarationOnly'、または 'rewriteRelativeImportExtensions' のいずれかが設定されている場合にのみ使用できます。
+    // JavaScriptファイルを出力せず、型チェックのみを行う場合に設定します
+    //"noEmit": true,
+    // 相対インポートパスの拡張子を自動的に書き換える機能を使用する場合に設定します。
+    "rewriteRelativeImportExtensions": true,  
+
+    // このモジュールは、'allowSyntheticDefaultImports' フラグをオンにして既定のエクスポートを参照することにより、ECMAScript のインポートまたはエクスポートのみを使用して参照できます
+    "allowImportingTsExtensions": true,
+
   }, "include": [
     "./src/**/*.ts"
   ]
